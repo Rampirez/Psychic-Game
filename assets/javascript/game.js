@@ -46,20 +46,20 @@
             else if (compGuess != userKey){
                 guessNum--;
                 $("#guess-left-num").html(guessNum);
-                $("#guess-arr").append(", " + userKey);
+                $("#guess-arr").append(userKey + "  ");
 
                 //LOSE STATE
                 //If guesses left is 0, reset the entire game including
                 // guesses left reset, new computer guess,
                 // and add to the losses obtained.
                 if (guessNum == 0) {
+                    alert("loss! The answer was: " + compGuess);
                     guessNum = 10;
                     $("#guess-left-num").html(guessNum);
                     compGuess = validInput[Math.floor(Math.random() * 26)];
                     lossNum++;
                     $("#loss-num").html(lossNum);
                     $("#guess-arr").html("");
-                    alert("loss! The answer was: " + compGuess);
                 }
             }
 
